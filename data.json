@@ -1,0 +1,264 @@
+{
+	"weapons": [{
+			"id": "001",
+			"type": "Melee",
+			"name": "Beginner's Blade",
+			"level": 1,
+			"goldToUpgrade": 50,
+			"moveDamage": [{
+				"0": 10,
+				"1": 12,
+				"2": 8
+			}, {
+				"0": 15,
+				"1": 17,
+				"2": 10
+			}, {
+				"0": 23,
+				"1": 27,
+				"2": 16
+			}],
+			"effectName": "Resting Assualt"
+		}, {
+			"id": "002",
+			"type": "Ranged",
+			"name": "Novice's Bow",
+			"level": 1,
+			"goldToUpgrade": 50,
+			"moveDamage": [{
+				"0": 6,
+				"1": 16,
+				"2": 6
+			}, {
+				"0": 9,
+				"1": 25,
+				"2": 9
+			}, {
+				"0": 12,
+				"1": 33,
+				"2": 12
+			}],
+			"effectName": "None"
+		}, {
+			"id": "003",
+			"type": "Ranged",
+			"name": "Apprentince's Staff",
+			"level": 1,
+			"goldToUpgrade": 50,
+			"moveDamage": [{
+				"0": 9,
+				"1": 9,
+				"2": 8
+			}, {
+				"0": 14,
+				"1": 14,
+				"2": 11
+			}, {
+				"0": 21,
+				"1": 21,
+				"2": 16
+			}],
+			"effectName": "Defender's Resillience"
+		}, {
+			"id": "004",
+			"type": "Melee",
+			"name": "Scavenger's Daggers",
+			"level": 1,
+			"goldToUpgrade": 50,
+			"moveDamage": [{
+				"0": 13,
+				"1": 13,
+				"2": 4
+			}, {
+				"0": 20,
+				"1": 20,
+				"2": 7
+			}, {
+				"0": 27,
+				"1": 27,
+				"2": 11
+			}],
+			"effectName": "Furious Recovery"
+		},  {
+			"id": "005",
+			"type": "Melee",
+			"name": "Goblin's Club",
+			"level": 1,
+			"goldToUpgrade": 50,
+			"moveDamage": [{
+				"0": 8,
+				"1": 8,
+				"2": 8
+			}, {
+				"0": 12,
+				"1": 12,
+				"2": 12
+			}, {
+				"0": 18,
+				"1": 18,
+				"2": 18
+			}],
+			"effectName": "None"
+		},  {
+			"id": "006",
+			"type": "Melee",
+			"name": "Wolf's Fangs",
+			"level": 1,
+			"goldToUpgrade": 50,
+			"moveDamage": [{
+				"0": 14,
+				"1": 14,
+				"2": 3
+			}, {
+				"0": 23,
+				"1": 23,
+				"2": 5
+			}, {
+				"0": 30,
+				"1": 30,
+				"2": 8
+			}],
+			"effectName": "None"
+		},   {
+			"id": "007",
+			"type": "Melee",
+			"name": "Vampire Bat's Fangs",
+			"level": 1,
+			"goldToUpgrade": 50,
+			"moveDamage": [{
+				"0": 7,
+				"1": 7,
+				"2": 1
+			}, {
+				"0": 13,
+				"1": 13,
+				"2": 2
+			}, {
+				"0": 19,
+				"1": 19,
+				"2": 3
+			}],
+			"effectName": "Blood Sucker"
+		}
+	],
+	"effects": [{
+			"name": "Resting Assualt",
+			"id": "001",
+			"effectDescription": "Each time this character uses counter it gains a stack. This character's next strike attack will use consume the stacks and inflict 5 additional damage for each stack.",
+			"effectOnMoves": ["1"],
+			"effectModifier": "damage",
+			"modifier": 5,
+			"requiresSuccess": 0,
+			"requiresCounters": false,
+			"modiferValueEqualsCounters": true,
+			"equalCounter": "2",
+			"clearCounters": true,
+			"requiredCounters": [0, 0, 0]
+		}, {
+			"name": "Defender's Resillience",
+			"id": "002",
+			"effectDescription": "Using counter will heal this character for 4 health",
+			"effectOnMoves": ["2"],
+			"effectModifier": "heal",
+			"modifier": 4,
+			"requiresSuccess": 0,
+			"requiresCounters": false,
+			"modiferValueEqualsCounters": false,
+			"equalCounter": "2",
+			"clearCounters": false,
+			"requiredCounters": [0, 0, 0]
+		},  {
+			"name": "Furious Recovery",
+			"id": "003",
+			"effectDescription": "Succesful counters deal 8 additional damage",
+			"effectOnMoves": ["2"],
+			"effectModifier": "damage",
+			"modifier": 8,
+			"requiresSuccess": 1,
+			"requiresCounters": false,
+			"modiferValueEqualsCounters": false,
+			"equalCounter": "2",
+			"clearCounters": false,
+			"requiredCounters": [0, 0, 0]
+		},   {
+			"name": "Blood Sucker",
+			"id": "004",
+			"effectDescription": "Strikes heal for 3 health",
+			"effectOnMoves": ["1"],
+			"effectModifier": "heal",
+			"modifier": 3,
+			"requiresSuccess": 0,
+			"requiresCounters": false,
+			"modiferValueEqualsCounters": false,
+			"equalCounter": "2",
+			"clearCounters": false,
+			"requiredCounters": [0, 0, 0]
+		}
+
+	],
+	"combos": [{
+		"id": "001",
+		"name": "Precision Strike",
+		"recipe": [2, 2, 1],
+		"recipe_string": "counter-counter-strike",
+		"stat_modify": "damage",
+		"modifier": "x",
+		"amount": "2",
+		"description": "Triggers a 2x damage multiplier" 
+	}],
+	"creatures": [{
+		"name": "Goblin",
+		"level_multiplier":0.6,
+		"base_health":20,
+		"exp_level":1,
+		"gold_yield":5,
+		"weapon":{
+			"name":"Goblin's Club",
+			"level":1
+		},
+		"drops":["Goblin's Head"]
+	},{
+		"name": "Wolf",
+		"level_multiplier":0.6,
+		"base_health":15,
+		"exp_level":2,
+		"gold_yield":6,
+		"weapon":{
+			"name":"Wolf's Fangs",
+			"level":1
+		},
+		"drops":["Wolf's Pelt"]
+	},{
+		"name": "Vampire Bat",
+		"level_multiplier":0.6,
+		"base_health":10,
+		"exp_level":3,
+		"gold_yield":7,
+		"weapon":{
+			"name":"Vampire Bat's Fangs",
+			"level":1
+		},
+		"drops":["Bat's Wing"]
+	} 
+	],
+	"creatureDrops":[{
+		"name":"Wolf's Pelt",
+		"description":"The furry coat of a wild wolf",
+		"sellValue":5,
+		"chance":50,
+		"count":1
+	},{
+		"name":"Goblin's Head",
+		"description":"The severed head of an ugly goblin",
+		"sellValue":15,
+		"chance":20,
+		"count":1
+	},{
+		"name":"Bat's Wing",
+		"description":"A wing that has been violently seperated from a bat",
+		"sellValue":20,
+		"chance":10,
+		"count":1
+	}
+	]	
+}
