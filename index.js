@@ -1,5 +1,7 @@
 var firebase = require('firebase');
 var Discord = require('discord.js');
+var express = require('express')
+var app = express()
 var client = new Discord.Client();
 var data = require('./data.json');
 var version = "0.4"
@@ -1617,3 +1619,14 @@ client.on('message', message => {
 		}
 	})
 });
+
+app.set('port', (process.env.PORT || 5000))
+app.use(express.static(__dirname + '/public'))
+
+app.get('/', function(request, response) {
+  response.send('Hello World!')
+})
+
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
