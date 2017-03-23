@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "github:hydrabolt/discord.js"
+  },
+  "scripts":{
+    "start": "node index.js"
   }
 }
