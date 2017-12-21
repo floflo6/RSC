@@ -7,10 +7,10 @@ var data = require('./data.json');
 var version = "0.4"
 
 //DARKBOT
-// var token = 'MjYyNDU1MDQ2ODYyNjY3Nzc2.C0DzFA.Zilj0g89_JdrKLSC-n1n6swtx2E';
+// var token = '';
 
 //ACTUAL
-var token = 'MjkyNzg5NTg4Mzk5NzUxMTY4.C69JSw.ui5P_WMd0VcxhIy1SIffXg8lmiQ'
+var token = ''
 client.login(token);
 
 var config = {
